@@ -19,9 +19,31 @@ Applications design:
 
   
 ## Backend [Optional]
- - yet to complete
+ - You will need to install composer to update packages
+ - #### Setup: 
+      - copy .env.example into .env file
+      - run *php artisan key:generate* command on command line
+      - create database and add database credentials to the file
+ - #### Deployment:
+       - Run *php artisan serve* or just use the browser path from localhost
+ - #### APIs:
+       - GET - *../api/todos*
+       - POST - *../api/todos*
+            - {
+                "title": "title",
+                "description": "description",
+                "isComplete": false
+              }
+       - PUT - *../api/todos/{id}*
+            - {
+                "title": "title",
+                "description": "description",
+                "isComplete": true
+              }
+       - DELETE - *../api/todos/{id}*
   
 ## Misc
+  - Vendor and other files were not deleted to make it easier
  
 ### Copyrights
 
