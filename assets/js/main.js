@@ -26,7 +26,7 @@ function TodoModel(){
 				}
 			};
 
-			xhr.open('GET', 'https://todo-simple-api.herokuapp.com/todos?page=6');
+			xhr.open('GET', 'https://todo-simple-api.herokuapp.com/todos');
 			xhr.send();
 		},
 		/**
@@ -37,7 +37,7 @@ function TodoModel(){
 			var data = JSON.stringify({'title': text, 'description': text, 'isComplete': false});
 			xhr.onload = function () {
 				if (xhr.status >= 200 && xhr.status < 300) {
-					// todos.push(JSON.parse(xhr.response).data);
+					todos.push(JSON.parse(xhr.response).data);
 					callback(JSON.parse(xhr.response).data);
 				} else {
 					callback({'error': 'Todo could not be save. Try again or contact administrator.'});
@@ -75,7 +75,7 @@ function TodoModel(){
 			var data = JSON.stringify({'title': todos[index].title, 'description': todos[index].description, 'isComplete': newStatus});
 			xhr.onload = function () {
 				if (xhr.status >= 200 && xhr.status < 300) {
-					// todos[index].isComplete = newStatus;
+					todos[index].isComplete = newStatus;
 					callback(JSON.parse(xhr.response).data);
 				} else {
 					callback({'error': 'Unable to change the status of todo data.'});
