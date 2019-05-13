@@ -24,6 +24,7 @@ Applications design:
       - copy .env.example into .env file
       - run *php artisan key:generate* command on command line
       - create database and add database credentials to the file
+      - run *php artisan migrate* command on command line
  - #### Deployment:
        - Run *php artisan serve* or just use the browser path from localhost
  - #### APIs:
